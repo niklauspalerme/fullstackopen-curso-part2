@@ -10,11 +10,11 @@
 
 - Se utiliza el Input: 
     - Para capturar valores escritos en la etiqueta
-    - El Evento del Input es el onChange
+    - El Evento del Input es el **onChange**
     - Se utilza el event.target.value del DOM para capturar valor
     - El value del Input debe ser el estado actual de las newNote
 - Se utiliza el form:
-    - El form tiene evento el "onSubmit"
+    - El form tiene evento el **"onSubmit"**
     - El form se debe utilizar -> **event.preventDefault()**
     - En el debemos actualizar el state global ->  En este caso "notes"
     - Para modificar un state compuesto de array of objects podemos:
