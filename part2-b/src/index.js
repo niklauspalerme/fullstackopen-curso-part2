@@ -25,8 +25,12 @@ const notes = [
 
 
 const App = (props) => {
+
+  //States
+
   const [notes, setNotes] = useState(props.notes)
   const [newNote, setNewNote] = useState('') 
+  const [showAll, setShowAll] = useState(true)
 
   //Controladores
 
@@ -36,6 +40,7 @@ const App = (props) => {
     setNewNote(event.target.value)
   }
 
+  //2
   const addNote = (event) => {
     event.preventDefault();
     const noteObject = {
@@ -49,14 +54,31 @@ const App = (props) => {
     setNewNote('')
   }
 
-  //2
+  //3
+  const handleShowAll = () => {
+    setShowAll(!showAll)
+  }
   
 
   return (
     <div>
       <h1>Notes:</h1>
+      <div>
+        <button onClick={handleShowAll}>
+          {showAll ? 'Show only important' : 'Show all' }
+        </button>
+      </div>
       <ol>
-       {notes.map(note=> <Note key={note.id} note={note}/>)}
+       {
+        notes
+        .filter(note => {
+           if (showAll === true)  
+            return note
+           else
+            return note.important === true
+        })
+        .map(note=> <Note key={note.id} note={note}/>)
+       }
       </ol>
       <form onSubmit={addNote}>
         <input value={newNote} onChange={handleNoteChange}/>
