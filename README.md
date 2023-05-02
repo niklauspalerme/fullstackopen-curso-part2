@@ -25,13 +25,14 @@
     - Debido a que es **submit** no es necesario manejarlo con su evento -> **onClick**
     - Por default lo maneja en este caso el evento el **form**
 
-# Fullstack Part 2-c - Obteniendo datos del servidor
+# Fullstack Part 2-c - Obteniendo datos del servidor (24:22)
 
 - Utilizamos esta web como una fake api **https://jsonplaceholder.typicode.com/**
+- Se utiliza axios 
 - Se empieza a usar el hooks -> **useEffect** (12:24)
     - Es una función que se ejecuta cada vez que se renderiza nuestro componente
     - El segundo argumento del **useEffect** va determinar cuando se va renderizar:
-        - Si el segundo argumento es vaci **''** se ejecuta cada vez que se renderice algo la aplicación
+        - Si el segundo argumento es vacio **''** se ejecuta cada vez que se renderice algo la aplicación
         - Si se coloca el **[]** significa que se ejecutara una vez, es ideal para actualizar 
         los states iniciales de una peticion **fetch/axios**
         - Si el segundo argumento es un state **[newNotes]** cada vez que se modifica ese estado se 
