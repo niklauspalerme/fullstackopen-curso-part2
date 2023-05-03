@@ -25,7 +25,7 @@
     - Debido a que es **submit** no es necesario manejarlo con su evento -> **onClick**
     - Por default lo maneja en este caso el evento el **form**
 
-# Fullstack Part 2-c - Obteniendo datos del servidor (24:22)
+# Fullstack Part 2-c - Obteniendo datos del servidor (00:00 - 24:22)
 
 - Utilizamos esta web como una fake api **https://jsonplaceholder.typicode.com/**
 - Se utiliza axios 
