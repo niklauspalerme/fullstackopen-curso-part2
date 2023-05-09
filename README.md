@@ -27,7 +27,7 @@
 
 # Fullstack Part 2-c - Obteniendo datos del servidor (00:00 - 24:22)
 
-- Utilizamos esta web como una fake api **https://jsonplaceholder.typicode.com/**
+- Utilizamos esta web como una fake api  (Metodo GET) **https://jsonplaceholder.typicode.com/**
 - Se utiliza **axios**
 - Se Utiliza el hooks (12:24) **useEffect**:
     - Es una función que se ejecuta cada vez que se renderiza nuestro componente
@@ -69,3 +69,9 @@ useEffect(() =>{
 }, [newNotes])
 
 ```
+
+# Fullstack Part 2d - Alterar datos del servidor (24:22 - )
+
+- Continuamos Utilizamos esta web como una fake api (Otros metodos) **https://jsonplaceholder.typicode.com/**
+- Creamos un folder **servicios** donde va tener el codigo del consumo del servicio que queramos usar.
+- Utilizamos las funciones dentro de **servicios** localizandolas en los controladores de evento.

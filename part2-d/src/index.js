@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from "react-dom/client";
 import { Note } from './Note';
-import axios from 'axios'
+import { getAllNotes } from './servicios/notes/getAllNotes';
+import { createNote } from './servicios/notes/createNote';
 
 const notes = [
   {
@@ -23,15 +24,17 @@ const App = () => {
 
 
   //Efectos
-  useEffect(() =>{
-    console.log("UserEffect")
-    setLoading(true)
+  useEffect(  () =>{
 
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then( response => {
-      setLoading(false)
-      setNotes(response.data)
-    })
+    console.log("UserEffect");
+    setLoading(true);
+
+    getAllNotes()
+    .then((notes)=>{
+      setNotes(notes);
+      setLoading(false);
+    });
+    
   },[])
 
   //Controladores
@@ -47,13 +50,20 @@ const App = () => {
     event.preventDefault();
     const noteObject = {
       title: newNote,
-      id: notes.length + 1,
+      body: newNote,
+      userId: notes.length + 1,
+      id: notes.length+1
     }
-  
-    setNotes(notes.concat(noteObject))
-    setNewNote('')
+
+    setNotes(notes.concat(noteObject));
+    setNewNote('');
+
+    createNote(noteObject)
+    .then(resp => console.log(resp))
+
   }
 
+  console.log(notes)
 
   return (
     <div>
